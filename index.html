@@ -5,9 +5,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="x-ua-compatible" content="IE=10">
 <title></title>
-
 <style type="text/css">#initialLoading{background:url(assets/htmlimages/loader.gif) no-repeat center center;background-color:#ffffff;position:absolute;margin:auto;top:0;left:0;right:0;bottom:0;z-index:10010;}</style>
-<script type="text/javascript">var sg_div = document.createElement("div");sg_div.innerHTML = "<h1>You have been selected for a survey</h1><p>We appreciate your feedback!</p><p><a href=\"https://www.surveygizmo.com/s3/5499458/Feedback-on-SMU-videos\">Please click here start it now.</a> </p> <a href=\"#\" onclick=\"document.getElementById('sg-popup').style.display = 'none';return false;\">No, thank you.</a> ";sg_div.id = "sg-popup";sg_div.style.position = "absolute";sg_div.style.width = "500px";sg_div.style.top = "100px";sg_div.style.left = "400px";sg_div.style.backgroundColor = "#ffffff";sg_div.style.borderColor = "#000000";sg_div.style.borderStyle = "solid";sg_div.style.padding = "20px";sg_div.style.fontSize = "16px";document.body.appendChild(sg_div);</script>
+<script>
+    window.ibmNps = {
+      offeringId: "72fcf9d9-e286-437b-8cd0-b778c5edcf82",
+      userId: "",
+      disableHashing: true,
+	  deferSurvey:true,
+	
+    };
+</script>
+<script async src="https://nps.mybluemix.net/survey/nps-survey.js"></script>
 <script>
 
 var deviceReady = false;
@@ -15,7 +23,10 @@ var initCalled = false ;
 var initialized = false;
 
 function onBodyLoad()
-{
+{   
+
+     setTimeout( function(){
+	showNpsSurvey();},"180000");
 	if(typeof window.device === 'undefined')
 	{
 		document.addEventListener("deviceready", onDeviceReady, false);
